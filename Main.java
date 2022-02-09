@@ -6,12 +6,20 @@ class Main{
         //empty constructor
         
     }
-    int binarySearch(){
-        return 0;
+    int binarySearch(int[] array,int key){
+        int start =0,end = array.length;
+        int mid = start - end/2;
+        if (key == mid)
+            return key;
+        else     
+            return 0;
     }
     void print(int[] arr){
         for(int i :arr)
                 System.out.print(i+"\t");
+    }
+    int input(){
+        return sc.nextInt();
     }
     int[] input(int size){
         int[] arr = new int[size];
@@ -35,11 +43,13 @@ class Main{
        obj= new Main();
        try{
         sc = new Scanner(System.in);
-        System.out.println("Please Enter Size of an array");
+        obj.print("Please Enter Size of an array");
         int size = sc.nextInt();
+        obj.print("Enter a key value");
+        int key = obj.input();
         int[] array = obj.input(size);
-
-        obj.print(array);
+        obj.print(obj.binarySearch(array,key));
+        //obj.print(array);
         sc.close();
    }catch(Exception ex){
       System.out.print(ex);
