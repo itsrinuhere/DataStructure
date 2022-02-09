@@ -43,13 +43,12 @@ class Main{
        obj= new Main();
        try{
         sc = new Scanner(System.in);
-        obj.print("Please Enter Size of an array");
+        obj.print("Please Enter Size of an array:\t");
         int size = sc.nextInt();
-        obj.print("Enter a key value");
+        obj.print("Enter a key value:\t");
         int key = obj.input();
-        int[] array = obj.input(size);
-        obj.print(obj.binarySearch(array,key));
-        //obj.print(array);
+        obj.print("please enter the array:\t");
+        obj.print(obj.binarySearch(obj.input(size),key));
         sc.close();
    }catch(Exception ex){
       System.out.print(ex);
