@@ -7,12 +7,18 @@ class Main{
         
     }
     int binarySearch(int[] array,int key){
-        int start =0,end = array.length;
-        int mid = start - end/2;
-        if (key == mid)
-            return key;
+        int start =0,end = array.length,mid=0;
+        while(key!=mid){
+            mid = start + end/2;
+            if(key>array[mid])
+                mid++;
+            else if(key<array[mid])
+                mid--;        
+        }
+        if (key == array[mid])
+            return mid;
         else     
-            return 0;
+            return -1;
     }
     void print(int[] arr){
         for(int i :arr)
@@ -48,7 +54,11 @@ class Main{
         obj.print("Enter a key value:\t");
         int key = obj.input();
         obj.print("please enter the array:\t");
-        obj.print(obj.binarySearch(obj.input(size),key));
+        int n =obj.binarySearch(obj.input(size),key);
+        if( n!=-1)
+            obj.print("Array is at"+n);
+        else
+            obj.print("\nNot found");    
         sc.close();
    }catch(Exception ex){
       System.out.print(ex);
